@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn ethical hacking from scratch with interactive roadmaps and engaging characters">
+    <title>Awesome Hacking Academy - From Zero to Hero</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="particles-container"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ Awesome Hacking Academy</h1>
+                <p class="tagline">From Zero to Hero</p>
+            </div>
+            <nav>
+                <button class="nav-btn" onclick="showSection('home')">Home</button>
+                <button class="nav-btn" onclick="showSection('characters')">Choose Mentor</button>
+                <button class="nav-btn" onclick="showSection('roadmaps')">Roadmaps</button>
+                <button class="nav-btn" onclick="showSection('resources')">Resources</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section active">
+        <div class="container hero-content">
+            <h2 class="hero-title">Welcome to Your Hacking Journey</h2>
+            <p class="hero-description">Master ethical hacking through guided roadmaps, expert mentors, and hands-on resources. Choose your path, select your mentor, and become a cybersecurity hero!</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showSection('characters')">Choose Your Mentor</button>
+                <button class="btn btn-secondary" onclick="showSection('roadmaps')">Explore Roadmaps</button>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>58+</h3>
+                    <p>Curated Resources</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>Learning Paths</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <p>Tools & Techniques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Selection -->
+    <section id="characters" class="section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Mentor</h2>
+            <p class="section-subtitle">Each mentor specializes in different areas and will guide you on your journey</p>
+            <div class="characters-grid">
+                <div class="character-card" data-character="cyber-nova">
+                    <div class="character-avatar">🚀</div>
+                    <h3>Cyber Nova</h3>
+                    <p class="character-specialty">Web Security Specialist</p>
+                    <p class="character-description">Expert in web application hacking, API security, and OWASP top 10. Perfect for beginners interested in web security.</p>
+                    <button class="btn btn-small" onclick="selectCharacter('cyber-nova')">Select Mentor</button>
+                </div>
+                
+                <div class="character-card" data-character="shadow-hawk">
+                    <div class="character-avatar">🦅</div>
+                    <h3>Shadow Hawk</h3>
+                    <p class="character-specialty">Network Penetration Expert</p>
+                    <p class="character-description">Master of network security, WiFi hacking, and infrastructure testing. Ideal for those interested in network penetration.</p>
+                    <button class="btn btn-small" onclick="selectCharacter('shadow-hawk')">Select Mentor</button>
+                </div>
+                
+                <div class="character-card" data-character="binary-sage">
+                    <div class="character-avatar">🧙</div>
+                    <h3>Binary Sage</h3>
+                    <p class="character-specialty">Reverse Engineering Guru</p>
+                    <p class="character-description">Specialist in malware analysis, reverse engineering, and exploit development. For advanced learners seeking deep technical knowledge.</p>
+                    <button class="btn btn-small" onclick="selectCharacter('binary-sage')">Select Mentor</button>
+                </div>
+                
+                <div class="character-card" data-character="ghost-protocol">
+                    <div class="character-avatar">👻</div>
+                    <h3>Ghost Protocol</h3>
+                    <p class="character-specialty">OSINT & Social Engineering</p>
+                    <p class="character-description">Expert in open-source intelligence, social engineering, and threat intelligence. Perfect for information gathering enthusiasts.</p>
+                    <button class="btn btn-small" onclick="selectCharacter('ghost-protocol')">Select Mentor</button>
+                </div>
+                
+                <div class="character-card" data-character="red-phoenix">
+                    <div class="character-avatar">🔥</div>
+                    <h3>Red Phoenix</h3>
+                    <p class="character-specialty">Red Team Operations</p>
+                    <p class="character-description">Master of red teaming, advanced persistent threats, and full-scope security testing. For aspiring red team professionals.</p>
+                    <button class="btn btn-small" onclick="selectCharacter('red-phoenix')">Select Mentor</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmaps Section -->
+    <section id="roadmaps" class="section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Learning Path</h2>
+            <p class="section-subtitle">Select a roadmap that matches your experience level and goals</p>
+            
+            <div class="roadmap-selector">
+                <button class="roadmap-tab active" onclick="showRoadmap('beginner')">🌱 Beginner</button>
+                <button class="roadmap-tab" onclick="showRoadmap('intermediate')">🚀 Intermediate</button>
+                <button class="roadmap-tab" onclick="showRoadmap('advanced')">⚡ Advanced</button>
+                <button class="roadmap-tab" onclick="showRoadmap('specialized')">🎯 Specialized</button>
+                <button class="roadmap-tab" onclick="showRoadmap('complete')">🏆 Complete Journey</button>
+            </div>
+
+            <!-- Beginner Roadmap -->
+            <div id="roadmap-beginner" class="roadmap-content active">
+                <h3>Beginner Path: Building Your Foundation</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Getting Started</h4>
+                            <p>Learn the basics of cybersecurity, networking, and Linux fundamentals</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/gradiuscypher/infosec_getting_started" target="_blank">Infosec Getting Started</a>
+                                <a href="https://github.com/Hack-with-Github/Awesome-Hacking" target="_blank">Awesome Hacking</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Web Security Basics</h4>
+                            <p>Understand web applications, HTTP, and common vulnerabilities</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/infoslack/awesome-web-hacking" target="_blank">Web Hacking</a>
+                                <a href="https://github.com/Hacker0x01/hacker101" target="_blank">Hacker101</a>
+                                <a href="https://github.com/paragonie/awesome-appsec" target="_blank">AppSec</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Practice & CTFs</h4>
+                            <p>Apply your knowledge in Capture The Flag challenges and practice environments</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/apsdehal/awesome-ctf" target="_blank">Awesome CTF</a>
+                                <a href="https://github.com/joe-shenouda/awesome-cyber-skills" target="_blank">Cyber Skills</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Tools & Techniques</h4>
+                            <p>Learn to use essential hacking tools and security assessment techniques</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/enaqx/awesome-pentest" target="_blank">Pentest Tools</a>
+                                <a href="https://github.com/danielmiessler/SecLists" target="_blank">SecLists</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Roadmap -->
+            <div id="roadmap-intermediate" class="roadmap-content">
+                <h3>Intermediate Path: Expanding Your Skills</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Advanced Web Security</h4>
+                            <p>Deep dive into complex vulnerabilities, authentication bypasses, and advanced exploitation</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/qazbnm456/awesome-web-security" target="_blank">Advanced Web Security</a>
+                                <a href="https://github.com/swisskyrepo/PayloadsAllTheThings" target="_blank">PayloadsAllTheThings</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Network Penetration Testing</h4>
+                            <p>Master network scanning, exploitation, and post-exploitation techniques</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/r3dy/capsulecorp-pentest" target="_blank">Capsulecorp Pentest</a>
+                                <a href="https://github.com/0x90/wifi-arsenal" target="_blank">WiFi Arsenal</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>OSINT & Reconnaissance</h4>
+                            <p>Learn advanced information gathering and open-source intelligence techniques</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/jivoi/awesome-osint" target="_blank">OSINT Resources</a>
+                                <a href="https://github.com/redhuntlabs/Awesome-Asset-Discovery" target="_blank">Asset Discovery</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Bug Bounty Hunting</h4>
+                            <p>Start participating in bug bounty programs and real-world security assessments</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/djadmin/awesome-bug-bounty" target="_blank">Bug Bounty Programs</a>
+                                <a href="https://github.com/ngalongc/bug-bounty-reference" target="_blank">Bug Bounty Reference</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Roadmap -->
+            <div id="roadmap-advanced" class="roadmap-content">
+                <h3>Advanced Path: Mastering the Craft</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Exploit Development</h4>
+                            <p>Learn to develop custom exploits, shellcode, and bypassing modern protections</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/FabioBaroni/awesome-exploit-development" target="_blank">Exploit Development</a>
+                                <a href="https://github.com/xairy/linux-kernel-exploitation" target="_blank">Linux Kernel Exploitation</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Reverse Engineering & Malware Analysis</h4>
+                            <p>Master binary analysis, malware dissection, and code deobfuscation</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/fdivrp/awesome-reversing" target="_blank">Reverse Engineering</a>
+                                <a href="https://github.com/rshipp/awesome-malware-analysis" target="_blank">Malware Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Red Teaming Operations</h4>
+                            <p>Conduct full-scope adversary simulations and advanced persistent threat scenarios</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/yeyintminthuhtut/Awesome-Red-Teaming" target="_blank">Red Teaming</a>
+                                <a href="https://github.com/Cyb3rWard0g/ThreatHunter-Playbook" target="_blank">ThreatHunter Playbook</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Advanced Topics</h4>
+                            <p>Explore cutting-edge areas like IoT, cloud security, and emerging technologies</p>
+                            <div class="resource-links">
+                                <a href="https://github.com/yeyintminthuhtut/Awesome-Advanced-Windows-Exploitation-References" target="_blank">Advanced Windows Exploitation</a>
+                                <a href="https://github.com/secfigo/Awesome-Fuzzing" target="_blank">Fuzzing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialized Roadmap -->
+            <div id="roadmap-specialized" class="roadmap-content">
+                <h3>Specialized Paths: Focus Your Expertise</h3>
+                <div class="specialized-grid">
+                    <div class="specialized-card">
+                        <h4>🌐 Web3 & Blockchain Security</h4>
+                        <p>Smart contract auditing and blockchain security</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/Anugrahsr/Awesome-web3-Security" target="_blank">Web3 Security</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>📱 Mobile Security</h4>
+                        <p>Android and iOS application security testing</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/ashishb/android-security-awesome" target="_blank">Android Security</a>
+                            <a href="https://github.com/ashishb/osx-and-ios-security-awesome" target="_blank">iOS Security</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>🏭 ICS/SCADA Security</h4>
+                        <p>Industrial control systems and critical infrastructure</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/hslatman/awesome-industrial-control-system-security" target="_blank">ICS Security</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>🚗 Vehicle Security</h4>
+                        <p>Automotive hacking and connected vehicle security</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/jaredthecoder/awesome-vehicle-security" target="_blank">Vehicle Security</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>📡 IoT & Embedded Systems</h4>
+                        <p>Internet of Things and embedded device security</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/fkie-cad/awesome-embedded-and-iot-security" target="_blank">Embedded & IoT</a>
+                            <a href="https://github.com/nebgnahz/awesome-iot-hacks" target="_blank">IoT Hacks</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>☁️ Cloud Security</h4>
+                        <p>Cloud infrastructure and serverless security</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/puresec/awesome-serverless-security/" target="_blank">Serverless Security</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>📞 Telecom Security</h4>
+                        <p>Cellular networks and VoIP security</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/W00t3k/Awesome-Cellular-Hacking" target="_blank">Cellular Hacking</a>
+                            <a href="https://github.com/EnableSecurity/awesome-rtc-hacking" target="_blank">RTC Hacking</a>
+                        </div>
+                    </div>
+                    
+                    <div class="specialized-card">
+                        <h4>🤖 AI/ML Security</h4>
+                        <p>Machine learning security and adversarial ML</p>
+                        <div class="resource-links">
+                            <a href="https://github.com/RandomAdversary/Awesome-AI-Security" target="_blank">AI Security</a>
+                            <a href="https://github.com/jivoi/awesome-ml-for-cybersecurity" target="_blank">ML for Cybersecurity</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Journey Roadmap -->
+            <div id="roadmap-complete" class="roadmap-content">
+                <h3>Complete Journey: From Zero to Hero</h3>
+                <p class="journey-intro">Follow this comprehensive path to become a well-rounded security professional</p>
+                
+                <div class="journey-phases">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 1</span>
+                            <h4>Foundation (0-3 months)</h4>
+                        </div>
+                        <ul>
+                            <li>Learn networking fundamentals (TCP/IP, OSI Model)</li>
+                            <li>Master Linux command line and scripting</li>
+                            <li>Understand basic programming (Python, JavaScript)</li>
+                            <li>Study web technologies (HTML, HTTP, APIs)</li>
+                        </ul>
+                        <div class="resource-links">
+                            <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank">Free Programming Books</a>
+                            <a href="https://github.com/alebcay/awesome-shell" target="_blank">Shell Resources</a>
+                        </div>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 2</span>
+                            <h4>Core Skills (3-6 months)</h4>
+                        </div>
+                        <ul>
+                            <li>Web application security testing</li>
+                            <li>Network scanning and enumeration</li>
+                            <li>Basic vulnerability assessment</li>
+                            <li>CTF challenges and practice labs</li>
+                        </ul>
+                        <div class="resource-links">
+                            <a href="https://github.com/enaqx/awesome-pentest" target="_blank">Pentest Resources</a>
+                            <a href="https://github.com/clong/DetectionLab" target="_blank">Detection Lab</a>
+                        </div>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 3</span>
+                            <h4>Specialization (6-12 months)</h4>
+                        </div>
+                        <ul>
+                            <li>Choose your focus area (web, network, mobile, etc.)</li>
+                            <li>Advanced exploitation techniques</li>
+                            <li>Bug bounty hunting or certifications</li>
+                            <li>Contributing to security community</li>
+                        </ul>
+                        <div class="resource-links">
+                            <a href="https://github.com/sundowndev/hacker-roadmap" target="_blank">Hacker Roadmap</a>
+                            <a href="https://github.com/The-Art-of-Hacking/h4cker" target="_blank">The Art of Hacking</a>
+                        </div>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 4</span>
+                            <h4>Mastery (12+ months)</h4>
+                        </div>
+                        <ul>
+                            <li>Advanced exploit development</li>
+                            <li>Research and tool development</li>
+                            <li>Red team operations</li>
+                            <li>Conference talks and publications</li>
+                        </ul>
+                        <div class="resource-links">
+                            <a href="https://github.com/PaulSec/awesome-sec-talks" target="_blank">Security Talks</a>
+                            <a href="https://github.com/re-pronin/awesome-vulnerability-research" target="_blank">Vulnerability Research</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2 class="section-title">Complete Resource Library</h2>
+            <p class="section-subtitle">All resources from the Awesome Hacking repository, organized by category</p>
+            
+            <div class="resource-categories">
+                <button class="category-btn active" onclick="filterResources('all')">All Resources</button>
+                <button class="category-btn" onclick="filterResources('learning')">Learning</button>
+                <button class="category-btn" onclick="filterResources('tools')">Tools</button>
+                <button class="category-btn" onclick="filterResources('practice')">Practice</button>
+                <button class="category-btn" onclick="filterResources('advanced')">Advanced</button>
+            </div>
+            
+            <div class="resources-grid">
+                <!-- Learning Resources -->
+                <div class="resource-card" data-category="learning">
+                    <h4>🎓 Infosec Getting Started</h4>
+                    <p>Collection of resources to help beginners learn about Information Security</p>
+                    <a href="https://github.com/gradiuscypher/infosec_getting_started" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="learning">
+                    <h4>📚 InfoSec</h4>
+                    <p>Awesome infosec courses and training resources for all skill levels</p>
+                    <a href="https://github.com/onlurking/awesome-infosec" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="learning">
+                    <h4>🎯 Hacker Roadmap</h4>
+                    <p>Complete guide for amateur pentesters with tools and resources</p>
+                    <a href="https://github.com/sundowndev/hacker-roadmap" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="learning">
+                    <h4>📖 Infosec Reference</h4>
+                    <p>Information Security Reference That Doesn't Suck</p>
+                    <a href="https://github.com/rmusser01/Infosec_Reference" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <!-- Tools Resources -->
+                <div class="resource-card" data-category="tools">
+                    <h4>🔧 Pentest Tools</h4>
+                    <p>Comprehensive list of penetration testing tools and resources</p>
+                    <a href="https://github.com/enaqx/awesome-pentest" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools">
+                    <h4>🛠️ SecLists</h4>
+                    <p>Collection of multiple types of lists used during security assessments</p>
+                    <a href="https://github.com/danielmiessler/SecLists" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools">
+                    <h4>💉 PayloadsAllTheThings</h4>
+                    <p>Useful payloads and bypasses for Web Application Security</p>
+                    <a href="https://github.com/swisskyrepo/PayloadsAllTheThings" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools">
+                    <h4>📡 WiFi Arsenal</h4>
+                    <p>Pack of various tools for 802.11 hacking and wireless security</p>
+                    <a href="https://github.com/0x90/wifi-arsenal" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <!-- Practice Resources -->
+                <div class="resource-card" data-category="practice">
+                    <h4>🚩 CTF Resources</h4>
+                    <p>Frameworks, libraries, and resources for Capture The Flag challenges</p>
+                    <a href="https://github.com/apsdehal/awesome-ctf" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="practice">
+                    <h4>💪 Cyber Skills</h4>
+                    <p>Legal and safe environments to practice cybersecurity skills</p>
+                    <a href="https://github.com/joe-shenouda/awesome-cyber-skills" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="practice">
+                    <h4>🐝 Bug Bounty</h4>
+                    <p>Bug Bounty Programs and write-ups from successful hunters</p>
+                    <a href="https://github.com/djadmin/awesome-bug-bounty" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="practice">
+                    <h4>🔬 Vulhub</h4>
+                    <p>Pre-Built Vulnerable Environments Based on Docker-Compose</p>
+                    <a href="https://github.com/vulhub/vulhub" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <!-- Advanced Resources -->
+                <div class="resource-card" data-category="advanced">
+                    <h4>💣 Exploit Development</h4>
+                    <p>Resources for learning advanced exploitation techniques</p>
+                    <a href="https://github.com/FabioBaroni/awesome-exploit-development" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="advanced">
+                    <h4>🔄 Reverse Engineering</h4>
+                    <p>Tools and resources for binary analysis and reverse engineering</p>
+                    <a href="https://github.com/fdivrp/awesome-reversing" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="advanced">
+                    <h4>🦠 Malware Analysis</h4>
+                    <p>Resources and tools for analyzing malicious software</p>
+                    <a href="https://github.com/rshipp/awesome-malware-analysis" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="advanced">
+                    <h4>🎭 Red Teaming</h4>
+                    <p>Advanced red team operations and adversary simulation resources</p>
+                    <a href="https://github.com/yeyintminthuhtut/Awesome-Red-Teaming" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <!-- Web Security -->
+                <div class="resource-card" data-category="tools learning">
+                    <h4>🌐 Web Hacking</h4>
+                    <p>Complete web application security resources and tools</p>
+                    <a href="https://github.com/infoslack/awesome-web-hacking" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools learning">
+                    <h4>🔐 AppSec</h4>
+                    <p>Resources for learning about application security</p>
+                    <a href="https://github.com/paragonie/awesome-appsec" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <!-- OSINT -->
+                <div class="resource-card" data-category="tools">
+                    <h4>🔍 OSINT</h4>
+                    <p>Open Source Intelligence tools and resources</p>
+                    <a href="https://github.com/jivoi/awesome-osint" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools">
+                    <h4>🎯 Asset Discovery</h4>
+                    <p>Resources for asset discovery phase of security assessments</p>
+                    <a href="https://github.com/redhuntlabs/Awesome-Asset-Discovery" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <!-- Additional Resources -->
+                <div class="resource-card" data-category="advanced">
+                    <h4>🧬 Fuzzing</h4>
+                    <p>Resources for learning fuzzing and vulnerability discovery</p>
+                    <a href="https://github.com/secfigo/Awesome-Fuzzing" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="learning practice">
+                    <h4>🏫 Hacker101</h4>
+                    <p>Free web security class by HackerOne</p>
+                    <a href="https://github.com/Hacker0x01/hacker101" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools">
+                    <h4>🧰 Security Tools</h4>
+                    <p>Awesome software, libraries, and security tools collection</p>
+                    <a href="https://github.com/sbilly/awesome-security" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="advanced">
+                    <h4>🛡️ Threat Intelligence</h4>
+                    <p>Resources for threat intelligence and hunting</p>
+                    <a href="https://github.com/hslatman/awesome-threat-intelligence" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="learning">
+                    <h4>🎤 Security Talks</h4>
+                    <p>Collection of awesome security conference talks</p>
+                    <a href="https://github.com/PaulSec/awesome-sec-talks" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="advanced">
+                    <h4>🔬 Vulnerability Research</h4>
+                    <p>Resources about vulnerability research and 0-day discovery</p>
+                    <a href="https://github.com/re-pronin/awesome-vulnerability-research" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="practice">
+                    <h4>🔗 CVE PoC</h4>
+                    <p>Collection of CVE Proof of Concepts for learning</p>
+                    <a href="https://github.com/qazbnm456/awesome-cve-poc" target="_blank" class="resource-link">Explore →</a>
+                </div>
+                
+                <div class="resource-card" data-category="tools">
+                    <h4>🎪 The Art of Hacking</h4>
+                    <p>Comprehensive cybersecurity references and resources</p>
+                    <a href="https://github.com/The-Art-of-Hacking/h4cker" target="_blank" class="resource-link">Explore →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <div id="progress-tracker" class="progress-tracker">
+        <div class="progress-header">
+            <h3>Your Journey Progress</h3>
+            <button class="close-btn" onclick="toggleProgressTracker()">✕</button>
+        </div>
+        <div class="progress-info">
+            <p><strong>Selected Mentor:</strong> <span id="selected-mentor">None</span></p>
+            <p><strong>Current Path:</strong> <span id="current-path">Choose a roadmap</span></p>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-text">Keep learning and practicing! 🚀</p>
+    </div>
+
+    <button class="progress-toggle" onclick="toggleProgressTracker()">📊</button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Built with 💙 for the cybersecurity community</p>
+            <p>Based on <a href="https://github.com/Hack-with-Github/Awesome-Hacking" target="_blank">Awesome Hacking</a> - Your contributions are always welcome!</p>
+            <div class="social-links">
+                <a href="https://twitter.com/HackwithGithub" target="_blank">Twitter</a>
+                <a href="https://www.facebook.com/HackwithGithub" target="_blank">Facebook</a>
+                <a href="https://github.com/Hack-with-Github/Awesome-Hacking" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
